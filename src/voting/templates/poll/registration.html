@@ -1,0 +1,56 @@
+{% extends "poll/base.html" %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+  {% load widget_tweaks %}
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+    <h2 class="badge badge-warning text-wrap mb-5">ایجاد حساب کاربری</h2>
+    {% if note %}
+      <h3 class="text text-muted">{{note}}</h3>
+    {% endif %}
+    <form action="" method="POST">
+      {% csrf_token %}  
+
+    <!-- {{form.username.label}}
+    {{form.username}}
+
+    {{form.email.label}}
+    {{form.email}}
+
+    {{form.first_name.label}}
+    {{form.first_name}}
+
+    {{form.last_name.label}}
+    {{form.last_name}}
+
+    {{form.password1.label}}
+    {{form.password1}}
+
+    {{form.password2.label}}
+    {{form.password2}} -->
+      {% for field in form %}
+        <div class="form-group">
+          {% if field.errors %}
+            {% for error in field.errors %}
+              <div>
+                <small class="text-danger">{{error}} </small> 
+              </div>
+            {% endfor %}
+          {% endif %}
+          {{ field.label_tag }}
+          {% render_field field class="form-control-md" %}
+        </div>
+      {% endfor %}
+
+
+
+      <input type="submit" class="btn btn-primary btn-sm" value="ثبت نام">
+    </form>
+    </div>
+    </div>
+  </div>
+
+{% endblock %}

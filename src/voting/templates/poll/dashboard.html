@@ -1,0 +1,18 @@
+{% extends "poll/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <!-- <h2>Hi, {{request.user.get_full_name}} - {{request.user.username}}</h2>
+  <h3><a href="{% url 'position' %}"><button id="btnSearch" class="btn btn-primary btn-md center-block" Style="width: 100px;" OnClick="btnSearch_Click" >VOTE</button></a></h3>
+  <h3><a href="{% url 'result' %}">برای دیدن نتیجه اینجا را کلیک کنید</a></h3> -->
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h4><span class="badge badge-warning text-wrap mb-3">Hi, {{request.user.get_full_name}} - {{request.user.username}}</span></h4>
+      <a href="{% url 'auth' %}"><button id="btnSearch" class="btn btn-primary btn-md center-block" Style="width: 105px;" OnClick="btnSearch_Click" >رأی دهی</button></a> 
+      <a href="{% url 'result' %}"><button id="btnSearch" class="btn btn-secondary btn-md center-block" Style="width: 100px;" OnClick="btnSearch_Click" >نتایج</button></a>
+         <!-- <button id="btnClear" class="btn btn-danger btn-md center-block" Style="width: 100px;" OnClick="btnClear_Click" >button</button> -->
+    </div>
+</div>
+{% endblock %}

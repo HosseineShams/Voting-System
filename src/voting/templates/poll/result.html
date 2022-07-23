@@ -1,0 +1,31 @@
+{% extends "poll/base.html" %}
+
+{% block title %}Result Page{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h4><span class="badge badge-warning text-wrap mb-3">نتایج</span></h4>
+  <table class="table table-bordered table-sm text-center">
+    <thead>
+      <tr class="bg-primary">
+        <th class="text-white">Candidate Name</th>
+        <th class="text-white">Candidate Position</th>
+        <th class="text-white">Total Vote</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in obj %}
+        <tr>
+          <td>{{ i.name }}</td>
+          <td>{{ i.position }}</td>
+          <td>{{ i.total_vote }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  </div>
+  </div>
+{% endblock %}

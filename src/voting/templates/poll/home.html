@@ -1,0 +1,35 @@
+{% extends "poll/base.html" %}
+
+{% block title %}Online Voting System{% endblock %}
+
+{% block content %}
+<!-- <div class="jumbotron">
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+  {% endif %}
+  <h1>به سیتم نظرسنجی خوش آمدید</h1>
+  <h3>این یک برنامه رای گیری ساده برای سازمان های کوچک است</h3>
+</div> -->
+<div class="container text-center">
+  <p>به سامانه نظرسنجی دانشگاه خوارزمی خوش آمدید</p>
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+  {% endif %}
+<hr class="mb-4">
+<div class="text-center">
+{% if request.user.is_authenticated %}
+<a class="nav-item nav-link" href="{% url 'dashboard' %}"><button type="submit" class="btn btn-primary btn-md ">نظرسنجی</button></a>
+{% else %}
+<a class="nav-item nav-link" href="{% url 'login' %}"><button type="submit" class="btn btn-primary btn-md ">ورود</button></a>
+{% endif %}
+</div
+
+{% endblock %}
